@@ -1,6 +1,6 @@
 # CMPS 2200  Recitation 04
 
-**Name (Team Member 1):**_________________________  
+**Name (Team Member 1):**______Joshua Allison___________________  
 **Name (Team Member 2):**_________________________
 
 
@@ -36,7 +36,8 @@ To use this function to count words, you'll need to implement your own `map_f` a
 
 4. Assume that a word `w` appears `n` times. What is the **work** and **span** of `word_count_reduce` for this word, assuming a parallel implementation of the `reduce` function?
 
-**Enter answer here**
+
+**Enter answer here**   For word w appearing n times, in the parallel implementation of reduce, the work would be O(n) since each element of the list needs to be reduced. The span would also be O(n) because the reduction can be done in parallel.
 
 
 5. Why are we going through all this trouble? Couldn't I just use this function to count words?
@@ -52,7 +53,7 @@ for doc in docs:
 
 What is the problem that prevents us from easily parallelizing this solution?
 
-**Enter answer here**
+**Enter answer here** The issue comes from the fact that when we're updating a shared data structure concurrently, we need to make sure that the updates are done in a thread-safe manner to prevent inconsistencies. This adds complexity to the implementation and can hinder any benefits of parallelization due to synchronization overhead.
 
 
 ## Part 2: Sentiment analysis
